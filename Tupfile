@@ -1,7 +1,6 @@
-CC = gcc
-CFLAGS = -O3 -Izlib
+include_rules
 
 PNG_SRCS = png.c pngerror.c pngget.c pngmem.c pngpread.c pngread.c pngrio.c pngrtran.c pngrutil.c pngset.c pngtrans.c pngwio.c pngwrite.c pngwtran.c pngwutil.c
 
 : foreach $(PNG_SRCS) |> $(CC) $(CFLAGS) -o %o -c %f |> %B.o
-: *.o |> ar crs %o %f |> libpng.a
+: *.o |> $(AR) crs %o %f |> libpng.a

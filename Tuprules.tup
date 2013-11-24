@@ -1,0 +1,8 @@
+ifndef CC
+  CC = gcc
+endif
+ifndef AR
+  AR = ar
+endif
+
+CFLAGS = -O3 -Izlib
